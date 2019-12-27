@@ -22,16 +22,16 @@ jne.setWeight(1)
 const origins = await jne.queryOrigins('depok')
 
 // set origin
-test.setOrigin(origins[0])
+jne.setOrigin(origins[0])
 
 // search the destinations location
-const dests = await test.queryDestinations('setiabudi')
+const dests = await jne.queryDestinations('setiabudi')
 
 // set destination
-test.setDestination(dests[0])
+jne.setDestination(dests[0])
 
 // profit!
-const results = await test.getShippingCharges()
+const results = await jne.getShippingCharges()
 
 console.log(results)
 ```
