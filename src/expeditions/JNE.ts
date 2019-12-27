@@ -1,6 +1,6 @@
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class JNE extends BaseExpedition {
   public constructor() {
     super('jne')
   }

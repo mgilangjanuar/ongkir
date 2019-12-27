@@ -1,6 +1,6 @@
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class JNT extends BaseExpedition {
   protected length?: number
 
   protected width?: number

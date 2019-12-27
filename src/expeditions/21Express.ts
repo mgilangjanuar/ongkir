@@ -1,6 +1,6 @@
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class DuaSatuExpress extends BaseExpedition {
   public constructor() {
     super('duasatu')
     this.mappingTableResult = {

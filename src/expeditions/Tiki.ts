@@ -1,6 +1,6 @@
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class Tiki extends BaseExpedition {
   public constructor() {
     super('tiki')
     this.mappingTableResult = {

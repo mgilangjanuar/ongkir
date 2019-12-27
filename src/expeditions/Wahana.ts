@@ -1,7 +1,7 @@
 import { Subdistrict, SubdistrictType } from '../Geolocation'
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class Wahana extends BaseExpedition {
   protected subdistrict?: SubdistrictType
 
   public constructor() {

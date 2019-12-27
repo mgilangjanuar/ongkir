@@ -1,6 +1,6 @@
 import { BaseExpedition } from './Base'
 
-export default class extends BaseExpedition {
+export class EMSIndonesia extends BaseExpedition {
   public constructor() {
     super('ems')
     throw new Error('not yet implemented')
