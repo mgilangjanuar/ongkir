@@ -5,7 +5,7 @@ Get the shipping charges from logistic services in Indonesia.
 ## Install
 
 ```shell
-npm i @mgilangjanuar/ongkir --save
+npm i @mgilangjanuar/ongkir@latest --save
 ```
 
 ## Example
@@ -35,6 +35,28 @@ const results = await jne.getShippingCharges()
 
 console.log(results)
 ```
+
+## Available Expeditions
+
+- [ ] 21Express Jakarta
+- [ ] Atri Xpress
+- [ ] EMS Indonesia
+- [ ] Expedito Express International
+- [ ] Indah Logistic Cargo
+- [x] JNE
+- [x] J&T Express
+- [ ] Lion Parcel
+- [ ] NSS Express
+- [ ] Pahala Express
+- [ ] Pandu Logistics
+- [x] Pos Indonesia
+- [ ] Rapid Express
+- [ ] RCL Logistics
+- [ ] REX Kiriman Express
+- [ ] RPX Express
+- [ ] Sicepat Express
+- [x] TIKI
+- [x] Wahana
 
 ## License
 
