@@ -1,7 +1,11 @@
 {
   "name": "ongkir",
   "version": "0.0.2",
-  "description": "",
+  "description": "Shipping charges from logistic services in Indonesia",
+  "keywords": [
+    "shipping charges",
+    "ongkir"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",

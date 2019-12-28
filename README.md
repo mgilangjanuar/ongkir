@@ -5,13 +5,13 @@ Get the shipping charges from logistic services in Indonesia.
 ## Install
 
 ```shell
-npm i @mgilangjanuar/ongkir@latest --save
+npm i ongkir --save
 ```
 
 ## Example
 
 ```typescript
-import { JNE } from '@mgilangjanuar/ongkir'
+import { JNE } from 'ongkir'
 
 const jne = new JNE()
 
