@@ -5,6 +5,18 @@ import querystring from 'querystring'
 import { ExpeditionType } from '.'
 import { Location, LocationType } from '../Geolocation'
 
+export type FeeDataType = {
+  service: string,
+  price: string,
+  etd?: string | null
+}
+
+export type ShippingChargeType = {
+  expedition: string,
+  customerService: string,
+  fees?: FeeDataType[]
+}
+
 export class BaseExpedition {
 
   protected axios: AxiosInstance
@@ -57,7 +69,7 @@ export class BaseExpedition {
     this.weight = weight
   }
 
-  public async getShippingCharges() {
+  public async getShippingCharges(): Promise<ShippingChargeType> {
     if (!this.origin || !this.destination) {
       throw new Error('Please defined origin and destination location')
     }
@@ -67,17 +79,17 @@ export class BaseExpedition {
       querystring.stringify(this.buildParams())
     )
     const $ = cheerio.load(req.data)
-    let fees: { service: string, price: string, etd?: string | null }[] = []
+    let fees: FeeDataType[] = []
     $('.table-result > tbody > tr').each((_, el) => {
       fees.push({
         service: $('td', el).eq(this.mappingTableResult.service).text(),
-        price: $('td', el).eq(this.mappingTableResult.price).text().trim().replace(/\,|\.|rp/gi, ''),
+        price: $('td', el).eq(this.mappingTableResult.price).text().trim().replace(/\,|\.|\s|rp/gi, ''),
         etd: $('td', el).eq(this.mappingTableResult.etd).text() || null
       })
     })
     return {
-      expedition: $('h3.top_title').text(),
-      customerService: $('h5').text(),
+      expedition: $('h3.top_title').text().replace(/^Expedisi\ /gi, ''),
+      customerService: $('h5').text().replace(/^Customer Service/gi, 'Phone'),
       fees
     }
   }

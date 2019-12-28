@@ -54,7 +54,7 @@ console.log(results)
 - [ ] RCL Logistics
 - [ ] REX Kiriman Express
 - [ ] RPX Express
-- [ ] Sicepat Express
+- [x] Sicepat Express
 - [x] TIKI
 - [x] Wahana
 
