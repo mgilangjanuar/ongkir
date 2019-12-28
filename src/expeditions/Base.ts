@@ -14,6 +14,7 @@ export type FeeDataType = {
 export type ShippingChargeType = {
   expedition: string,
   customerService: string,
+  description: string,
   fees?: FeeDataType[]
 }
 
@@ -90,6 +91,7 @@ export class BaseExpedition {
     return {
       expedition: $('h3.top_title').text().replace(/^Expedisi\ /gi, ''),
       customerService: $('h5').text().replace(/^Customer Service/gi, 'Phone'),
+      description: $('label.control-label').text(),
       fees
     }
   }
